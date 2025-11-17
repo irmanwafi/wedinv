@@ -1,12 +1,6 @@
-<script lang="ts">
-	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
-
-	let { children } = $props();
+<!-- src/routes/+layout.svelte -->
+<script>
+  import '../app.css'; // This line is important!
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
-{@render children()}
+<slot />
