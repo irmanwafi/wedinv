@@ -2,7 +2,7 @@
 <script>
   import { onMount } from 'svelte';
   
-  export let brideName = 'Ain';
+  export let brideName = 'Fatin';
   export let groomName = 'Hidayat';
   export let fullBrideName = 'Norain Binti Shahrudin';
   export let fullGroomName = 'Nur Hidayat Bin Suradi';
@@ -42,28 +42,6 @@
 </svelte:head>
 
 <section class="hero-section">
-  <!-- Floral decorations top -->
-  <div class="floral-decoration floral-top-left">
-    <svg viewBox="0 0 100 100" width="120" height="120">
-      <circle cx="50" cy="50" r="8" fill="#ec4899"/>
-      <circle cx="50" cy="25" r="12" fill="#ec4899"/>
-      <circle cx="75" cy="35" r="12" fill="#ec4899"/>
-      <circle cx="75" cy="65" r="12" fill="#ec4899"/>
-      <circle cx="50" cy="75" r="12" fill="#ec4899"/>
-      <circle cx="25" cy="65" r="12" fill="#ec4899"/>
-      <circle cx="25" cy="35" r="12" fill="#ec4899"/>
-      <circle cx="40" cy="50" r="6" fill="#fbbf24"/>
-      <circle cx="60" cy="50" r="6" fill="#fbbf24"/>
-    </svg>
-  </div>
-
-  <div class="floral-decoration floral-top-right">
-    <svg viewBox="0 0 100 100" width="100" height="100">
-      <path d="M50 20 Q70 30 75 50 Q70 70 50 80 Q30 70 25 50 Q30 30 50 20" fill="#ddd6fe" opacity="0.6"/>
-      <circle cx="50" cy="50" r="8" fill="#ec4899"/>
-    </svg>
-  </div>
-
   <!-- Background -->
   <div class="hero-bg"></div>
   
@@ -159,6 +137,8 @@
     justify-content: center;
     overflow: hidden;
     background: #ffffff;
+    padding: 0 60px;
+    box-sizing: border-box;
   }
 
   .hero-bg {
@@ -168,24 +148,7 @@
     z-index: 0;
   }
 
-  /* Floral decorations */
-  .floral-decoration {
-    position: absolute;
-    opacity: 0.6;
-    z-index: 2;
-  }
-
-  .floral-top-left {
-    top: 40px;
-    left: 40px;
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .floral-top-right {
-    top: 60px;
-    right: 50px;
-    animation: float 5s ease-in-out infinite 0.5s;
-  }
+  /* Bride image decorations - removed */
 
   /* Decorative circles */
   .decoration {
@@ -220,13 +183,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 0;
+    overflow-y: auto;
+    max-height: 100vh;
   }
 
   .content-wrapper {
     text-align: center;
-    max-width: 1000px;
+    max-width: 700px;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   /* Subtitle */
@@ -273,7 +240,7 @@
   }
 
   .bride-name {
-    font-size: clamp(48px, 10vw, 96px);
+    font-size: clamp(40px, 8vw, 72px);
     font-weight: 300;
     color: #1f2937;
     letter-spacing: -1px;
@@ -286,24 +253,24 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
-    margin: 30px 0;
+    margin: 24px 0;
   }
 
   .ampersand-divider .line {
     flex: 1;
-    max-width: 120px;
+    max-width: 100px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #d1d5db, transparent);
   }
 
   .ampersand-divider span {
-    font-size: clamp(36px, 6vw, 56px);
+    font-size: clamp(28px, 5vw, 48px);
     color: #d1d5db;
     font-weight: 300;
   }
 
   .groom-name {
-    font-size: clamp(48px, 10vw, 96px);
+    font-size: clamp(40px, 8vw, 72px);
     font-weight: 300;
     color: #1f2937;
     letter-spacing: -1px;
@@ -342,7 +309,7 @@
 
   /* Countdown Timer */
   .countdown-container {
-    margin: 50px 0;
+    margin: 35px 0;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
   }
@@ -352,11 +319,11 @@
   }
 
   .countdown-label {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #9ca3af;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-weight: 500;
   }
 
@@ -364,7 +331,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
@@ -373,38 +340,38 @@
     flex-direction: column;
     align-items: center;
     background: rgba(236, 72, 153, 0.08);
-    padding: 16px 20px;
+    padding: 12px 16px;
     border-radius: 8px;
     border: 1px solid rgba(236, 72, 153, 0.2);
-    min-width: 70px;
+    min-width: 60px;
   }
 
   .countdown-value {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     color: #ec4899;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .countdown-label-small {
-    font-size: 11px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     color: #9ca3af;
     font-weight: 500;
   }
 
   .countdown-divider {
-    font-size: 24px;
+    font-size: 20px;
     color: #d1d5db;
-    margin: 0 4px;
-    margin-bottom: 20px;
+    margin: 0 2px;
+    margin-bottom: 16px;
   }
 
   /* Event Details */
   .event-details {
-    margin: 30px 0 60px;
+    margin: 25px 0 45px;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
   }
@@ -414,33 +381,33 @@
   }
 
   .event-date {
-    font-size: 16px;
+    font-size: 14px;
     color: #4b5563;
     letter-spacing: 0.5px;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
     font-weight: 500;
   }
 
   .hijri-display {
-    font-size: 13px;
+    font-size: 12px;
     color: #9ca3af;
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
     font-weight: 400;
     letter-spacing: 0.5px;
   }
 
   .event-location {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #9ca3af;
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     font-weight: 400;
   }
 
   .rsvp-deadline {
-    font-size: 12px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
     color: #ec4899;
     margin: 0;
     font-weight: 600;
@@ -448,7 +415,7 @@
 
   /* CTA Button */
   .cta-container {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1s forwards;
   }
@@ -461,11 +428,11 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 48px;
+    padding: 14px 40px;
     background: #1f2937;
     color: #ffffff;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.5px;
     border: 2px solid #1f2937;
@@ -515,7 +482,7 @@
   /* Scroll indicator */
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     color: #d1d5db;
@@ -528,8 +495,8 @@
   }
 
   .scroll-indicator svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 
   /* Animations */
@@ -589,17 +556,7 @@
     .hero-section {
       height: auto;
       min-height: 100vh;
-      padding: 60px 20px;
-    }
-
-    .floral-top-left {
-      width: 60px;
-      height: 60px;
-    }
-
-    .floral-top-right {
-      width: 50px;
-      height: 50px;
+      padding: 40px 20px;
     }
 
     .decoration-1 {
@@ -617,50 +574,64 @@
     }
 
     .subtitle {
-      margin-bottom: 30px;
-      font-size: 12px;
+      margin-bottom: 20px;
+      font-size: 11px;
+    }
+
+    .event-type {
+      margin-bottom: 24px;
+      font-size: 14px;
     }
 
     .names-container {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .ampersand-divider {
-      gap: 16px;
-      margin: 20px 0;
+      gap: 12px;
+      margin: 16px 0;
     }
 
     .ampersand-divider .line {
-      max-width: 80px;
+      max-width: 60px;
+    }
+
+    .full-names {
+      margin-bottom: 24px;
     }
 
     .countdown-container {
-      margin: 30px 0;
+      margin: 24px 0;
     }
 
     .countdown-display {
-      gap: 8px;
+      gap: 6px;
     }
 
     .countdown-item {
-      padding: 12px 14px;
-      min-width: 60px;
+      padding: 10px 12px;
+      min-width: 50px;
     }
 
     .countdown-value {
-      font-size: 24px;
+      font-size: 18px;
     }
 
     .event-details {
-      margin: 20px 0 40px;
+      margin: 20px 0 30px;
     }
 
     .cta-container {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      padding: 12px 32px;
+      font-size: 13px;
     }
 
     .scroll-indicator {
-      bottom: 20px;
+      bottom: 15px;
     }
   }
 </style>
